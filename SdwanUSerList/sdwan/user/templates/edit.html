@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{infinity_user.ID}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">ID:</label>
+    <div class="col-sm-4">
+        <input type="text" name="ID" id="id_ID" required maxlength="20" value="{{ infinity_user.ID }}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">USER NAME:</label>
+    <div class="col-sm-4">
+        <input type="text" name="User_name" id="id_User_name" required maxlength="100" value="{{ infinity_user.User_name }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">COMPANY:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Company" id="id_Company" required maxlength="254" value="{{ infinity_user.Company }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">CITY:</label>
+    <div class="col-sm-4">
+        <input type="text" name="City" id="id_City" required maxlength="15" value="{{ infinity_user.City }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">DATE:</label>
+    <div class="col-sm-4">
+        <input type="text" name="DATE" id="id_DATE" required maxlength="15" value="{{ infinity_user.DATE }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">DEVICE SERIAL NUMBER:</label>
+    <div class="col-sm-4">
+        <input type="text" name="Device_Serial_Number" id="id_Device_Serial_Number" required maxlength="15" value="{{ infinity_user.Device_Serial_Number }}" />
+    </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update Entry</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>

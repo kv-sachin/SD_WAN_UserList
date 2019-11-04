@@ -1,0 +1,50 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>User Records</title>  
+     {% load staticfiles %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>
+<h1>Infinity SD_WAN Users List</h1>
+
+<link rel="stylesheet" href="{% static "css/demodjproject.css" %}">
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">
+    <table border="1"> 
+    <tr>  
+        <th>ID</th>
+        <th>User_name</th>  
+        <th>Company</th>  
+        <th>City</th>  
+        <th>DATE</th>
+        <th>Device_Serial_Number</th>  
+    </tr>  
+    </thead>  
+    <tbody>
+    {% for infinity_user in user_list %} 
+        <tr>
+            <td>{{ infinity_user.ID }}</td>
+            <td>{{ infinity_user.User_name }}</td>  
+            <td>{{ infinity_user.Company }}</td>  
+            <td>{{ infinity_user.City }}</td>  
+            <td>{{ infinity_user.DATE }}</td>
+            <td>{{ infinity_user.Device_Serial_Number }}</td> 
+            <td>  
+                <a href="/edit/{{ infinity_user.ID }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+                <a href="/delete/{{ infinity_user.ID }}">Delete</a>  
+            </td>  
+        </tr>
+    {% endfor %} 
+       
+          
+    </tbody>  
+</table>  
+<br>  
+<br>
+<table border="1">
+ 
+<center><a href="/user1" class="btn btn-primary"><b><h1>Add New User</h1></b></a></center>  
+</body>  
+</html>  
